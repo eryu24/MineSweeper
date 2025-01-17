@@ -1,9 +1,13 @@
 import static java.nio.file.Files.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Path;
+
+import MineFieldGenerator.MFGenerator;
+import OfficialSolution.OfficialTeamSolution;
 import org.junit.jupiter.api.Test;
 
 /**
