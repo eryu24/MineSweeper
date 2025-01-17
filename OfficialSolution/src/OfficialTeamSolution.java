@@ -1,5 +1,3 @@
-package OfficialSolution;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -7,7 +5,7 @@ import java.util.Scanner;
 /**
  * Minesweeper program
  *
- * @author Eric Ryu
+ * @author Eric Ryu, Dylon Bernal, David Miller
  */
 public final class OfficialTeamSolution {
     private static final char MINE = '*';
@@ -70,10 +68,10 @@ public final class OfficialTeamSolution {
 
     private static void processField(final char[][] theField, final int theRows,
                                      final int theCols, final int theFieldNumber) {
-        if (theFieldNumber > 1) {
-            // Print a blank line before each new field
-            //System.out.println();
-        }
+//        if (theFieldNumber > 1) {
+//            // Print a blank line before each new field
+//            //System.out.println();
+//        }
 
         OUTPUT.append("Field #").append(theFieldNumber).append(":").append('\n');
         //System.out.println("Field #" + theFieldNumber + ":");

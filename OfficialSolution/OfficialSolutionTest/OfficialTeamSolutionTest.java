@@ -1,3 +1,4 @@
+package srcTests;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -38,13 +39,13 @@ class OfficialTeamSolutionTest {
 
     // relative paths to test input minefields.
     private static final String TEST_INPUT_100BY100
-            = ".data/input_test100By100.txt";
+            = "eryu24_Minesweeper\\official_assignment_1_team_solution\\tests\\srcTests\\testResources\\input_test100By100.txt";
     private static final String MINESWEEPER_INPUT_TXT
-            = ".data/minesweeper_input.txt";
+            = "eryu24_Minesweeper\\official_assignment_1_team_solution\\tests\\srcTests\\testResources\\minesweeper_input.txt";
     private static final String READ_INPUT
-            = ".data/test_read_input.txt";
+            = "eryu24_Minesweeper\\official_assignment_1_team_solution\\tests\\srcTests\\testResources\\test_read_input.txt";
     private static final String SURROUNDED_BY_MINES
-            = ".data/test_input_square_surrounded_by_mines.txt";
+            = "eryu24_Minesweeper\\official_assignment_1_team_solution\\tests\\srcTests\\testResources\\test_input_square_surrounded_by_mines.txt";
 
     // To hold the input file
     private static String[] inputFile;
