@@ -3,6 +3,10 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Scanner;
 
+/**
+ * There exists a method to take console output called "consoleInputMinesweeper".
+ * The solution here is tested against the official input file and is verified in the test folder.
+ */
 public class DavidMineSweeper {
 
     private static final int[][] CHECK_ALL =
@@ -15,7 +19,7 @@ public class DavidMineSweeper {
     }
 
     private DavidMineSweeper() {
-        //instantiation
+        super(); //instantiation
     }
 
     public static void consoleInputMinesweeper() {

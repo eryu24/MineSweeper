@@ -6,8 +6,10 @@ import java.io.PrintStream;
 import java.nio.file.Path;
 import org.junit.jupiter.api.Test;
 
-
-public class MineSweeperValidity {
+/**
+ * Testing the validity of the file. If you need, clear the DavidMineSweeperOutput.txt to see difference and rerun.
+ */
+public class DavidMineSweeperValidity {
 
     private static final Path THE_BIG_ONE_RAW = Path.of(".data/minesweeper_input.txt");
 
