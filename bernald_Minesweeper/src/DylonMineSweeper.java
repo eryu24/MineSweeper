@@ -33,8 +33,7 @@ public final class DylonMineSweeper {
     public static void main(final String [] args) throws FileNotFoundException {
         //final boolean argumentFromCMD = args.length == 1;
         //Scanner input = new Scanner(System.in);
-        Scanner input = new Scanner(
-                new File(".data/minesweeper_input.txt"));
+        Scanner input = new Scanner(System.in);
 
         if (args.length == 1) {
             //assuming if there is 1 argument on the command line
