@@ -1,6 +1,6 @@
 package MineFieldGenerator;
 
-
+// THE ONE. (maybe, but most likely).
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
@@ -13,8 +13,10 @@ public final class MFGenerator {
         super();
     }
 
-    // Static StringBuilder to accumulate minefields
+    // Static StringBuilder to accumulate minefields with hints
     private static final StringBuilder accumulatedMineFields = new StringBuilder();
+    // Static StringBuilder to accumulate minefields without hints
+    private static final StringBuilder accumulatedFormattedMineFields = new StringBuilder();
 
     // Function to generate hints for a given minefield
     private static String generateHints(final char[][] field, final int rows, final int cols) {
@@ -48,6 +50,17 @@ public final class MFGenerator {
         return result.toString();
     }
 
+    // Method to accumulate formatted minefields without hints
+    private static void accumulateFormattedMineFields(final char[][] field, final int rows, final int cols) {
+        accumulatedFormattedMineFields.append(rows).append(' ').append(cols).append('\n');
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                accumulatedFormattedMineFields.append(field[i][j]);
+            }
+            accumulatedFormattedMineFields.append('\n');
+        }
+    }
+
     public static String generateMineField(final int rows, final int cols, final int minePercentage) {
         Random random = new Random();
         char[][] field = new char[rows][cols];
@@ -73,6 +86,9 @@ public final class MFGenerator {
                 minesPlaced++;
             }
         }
+
+        // Accumulate the minefields in the formatted StringBuilder without hints
+        accumulateFormattedMineFields(field, rows, cols);
 
         // Generate hints for the minefield
         return generateHints(field, rows, cols);
@@ -132,9 +148,12 @@ public final class MFGenerator {
                         }
                     }
 
+                    // Accumulate formatted minefields without hints
+                    accumulateFormattedMineFields(field, rows, cols);
+
                     String mineFieldWithHints = generateHints(field, rows, cols);
 
-                    // Accumulate the minefields in the StringBuilder
+                    // Accumulate the minefields with hints in the StringBuilder
                     accumulatedMineFields.append("Field #").append(fieldNumber).append(":\n");
                     accumulatedMineFields.append(mineFieldWithHints).append('\n');
                     fieldNumber++; // Increment the field number
@@ -152,7 +171,7 @@ public final class MFGenerator {
 
                     String mineField = generateMineField(rows, cols, minePercentage);
 
-                    // Accumulate the minefields in the StringBuilder
+                    // Accumulate the minefields with hints in the StringBuilder
                     accumulatedMineFields.append("Field #").append(fieldNumber).append(":\n");
                     accumulatedMineFields.append(mineField).append('\n');
                     fieldNumber++; // Increment the field number
@@ -170,20 +189,25 @@ public final class MFGenerator {
             }
         }
 
-        // Print all accumulated minefields at once
-        System.out.println(getAccumulatedMineFields());
-        //accumulatedMineFields.delete(0, accumulatedMineFields.length());
+        // Print all accumulated formatted minefields without hints
+        System.out.print(getAccumulatedFormattedMineFields());
 
         if (scanner != null) {
             scanner.close();
         }
     }
 
-    // Getter method for accumulated minefields
+    // Getter method for accumulated minefields with hints
     public static String getAccumulatedMineFields() {
         return accumulatedMineFields.toString();
     }
+
+    // Getter method for accumulated formatted minefields without hints
+    public static String getAccumulatedFormattedMineFields() {
+        return accumulatedFormattedMineFields.toString();
+    }
 }
+
 
 
 

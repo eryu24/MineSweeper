@@ -14,20 +14,15 @@ public final class OfficialTeamSolution {
     private static final int PADDING = 2;
     private static final int TERMINATOR = 0;
     private static final StringBuilder OUTPUT = new StringBuilder();
+    private static final StringBuilder INPUT = new StringBuilder();
 
     private OfficialTeamSolution(){
         // Prevents Instantiation
     }
 
     public static void main(final String[] theArgs) throws FileNotFoundException {
-        //Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(new File(theArgs[0]));
-        /*Scanner scanner = new Scanner(new File("C:\\Users\\berna\\IdeaProjects" +
-                "\\official_assignment_1_team_solution\\MineFieldFiles\\minesweeper_input.txt"));*/
-
-        /*if (theArgs.length == 1) {
-            scanner = new Scanner(new File(theArgs[0]));
-        }*/
+        Scanner scanner = theArgs.length == 1 ?
+                new Scanner(new File(theArgs[0])) : new Scanner(System.in);
 
         int fieldNumber = 1;
 
@@ -46,7 +41,7 @@ public final class OfficialTeamSolution {
         }
 
         scanner.close();
-        //System.out.print(OfficialTeamSolution.outputString());
+        System.out.println(OfficialTeamSolution.outputString());
 
     }
 
@@ -54,6 +49,7 @@ public final class OfficialTeamSolution {
                                                final int theCols) {
         // Create padded field hence +2
         char[][] field = new char[theRows + PADDING][theCols + PADDING];
+        INPUT.append(theRows).append(' ').append(theCols).append('\n');
 
         // Skip to next line
         theScanner.nextLine();
@@ -64,8 +60,11 @@ public final class OfficialTeamSolution {
             // Then place character by character
             for (int j = 0; j < theCols; j++) {
                 field[i + 1][j + 1] = line.charAt(j);
+                INPUT.append(line.charAt(j));
             }
+            INPUT.append('\n');
         }
+
         return field;
     }
 
@@ -85,15 +84,12 @@ public final class OfficialTeamSolution {
                 if (theField[i][j] == MINE) {
                     // Print mines
                     OUTPUT.append(MINE);
-                    //System.out.print(MINE);
                 } else {
                     // Print mine count
-                    //System.out.print(countAdjacentMines(theField, i, j));
                     OUTPUT.append(countAdjacentMines(theField, i, j));
                 }
             }
             OUTPUT.append('\n');
-            //System.out.println();
         }
         OUTPUT.append('\n');
     }
@@ -113,5 +109,9 @@ public final class OfficialTeamSolution {
 
     public static String outputString() {
         return OUTPUT.toString();
+    }
+
+    public static String inputString() {
+        return INPUT.toString();
     }
 }
