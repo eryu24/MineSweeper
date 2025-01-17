@@ -11,6 +11,8 @@
       <sourceFolder url="file://$MODULE_DIR$/millerd_Minesweeper/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/OfficalTeamSolutionTest/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OfficalTeamSolutionTest/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/bernald_Minesweeper/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bernald_Minesweeper/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/inputAI_Generator_Solution/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/millerd_Minesweeper/out" />
     </content>
