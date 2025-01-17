@@ -1,4 +1,4 @@
-package srcTests;
+package OfficialSolutionTest;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,13 +15,13 @@ import java.io.PrintStream;
 class OfficialTeamSolutionTest {
     // For temporarily sending the System.out stream to this
     // byte array so that the default behavior of either the
-    // MFGenerator and OfficialTeamSolution does not end up
+    // MFGenerator and OfficialSolution.OfficialTeamSolution does not end up
     // doing System.out.println behavior performing unit testing.
     private static final ByteArrayOutputStream outContent
             = new ByteArrayOutputStream();
 
     // resets the print stream to System.out restoring the
-    // printing behaviors of MFGenerator and OfficialTeamSolution.
+    // printing behaviors of MFGenerator and OfficialSolution.OfficialTeamSolution.
     private static final PrintStream regularOut = System.out;
 
 

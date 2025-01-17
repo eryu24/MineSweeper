@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MineSweeper.iml" filepath="$PROJECT_DIR$/MineSweeper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OfficialSolution/OfficialSolution.iml" filepath="$PROJECT_DIR$/OfficialSolution/OfficialSolution.iml" />
     </modules>
   </component>
 </project>
