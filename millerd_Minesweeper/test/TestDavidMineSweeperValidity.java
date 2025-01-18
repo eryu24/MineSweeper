@@ -15,11 +15,11 @@ import org.junit.jupiter.api.Test;
  */
 public class TestDavidMineSweeperValidity {
 
-    private static final Path THE_BIG_ONE_RAW = Path.of(".data/minesweeper_input.txt");
+    private static final Path THE_BIG_ONE_RAW = Path.of(".dataMineFields/minesweeper_input.txt");
 
-    private static final Path THE_BIG_ONE_SOLVED = Path.of(".data/minesweeper_output.txt");
+    private static final Path THE_BIG_ONE_SOLVED = Path.of(".dataMineFields/minesweeper_output.txt");
 
-    private final Path myBigAllocation = Path.of(".data/DavidMineSweeperOutput.txt");
+    private final Path myBigAllocation = Path.of(".dataMineFields/DavidMineSweeperOutput.txt");
 
     @Test
     public void bigFileTest() throws IOException {

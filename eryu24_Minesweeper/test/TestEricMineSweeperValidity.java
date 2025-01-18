@@ -15,11 +15,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class TestEricMineSweeperValidity {
 
-    private static final Path THE_BIG_ONE_RAW = Path.of(".data/minesweeper_input.txt");
+    private static final Path THE_BIG_ONE_RAW = Path.of(".dataMineFields/minesweeper_input.txt");
 
-    private static final Path THE_BIG_ONE_SOLVED = Path.of(".data/minesweeper_output.txt");
+    private static final Path THE_BIG_ONE_SOLVED = Path.of(".dataMineFields/minesweeper_output.txt");
 
-    private final Path myBigAllocation = Path.of(".data/EricMineSweeperOutput.txt");
+    private final Path myBigAllocation = Path.of(".dataMineFields/EricMineSweeperOutput.txt");
 
     @Test
     public void bigFileTest() throws IOException {
