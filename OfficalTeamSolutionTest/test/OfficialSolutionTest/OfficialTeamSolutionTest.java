@@ -85,7 +85,7 @@ class OfficialTeamSolutionTest {
         MFGenerator.main(inputFile);
         assertEquals(OfficialTeamSolution.outputString(),
                 MFGenerator.getAccumulatedMineFields(),
-                "");
+                "minesweeper_input.txt outputted incorrectly from official solution.");
     }
 
     @Test
