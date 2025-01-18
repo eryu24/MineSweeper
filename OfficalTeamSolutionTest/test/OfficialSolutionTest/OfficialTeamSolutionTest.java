@@ -24,14 +24,6 @@ class OfficialTeamSolutionTest {
     // printing behaviors of MFGenerator and OfficialSolution.OfficialTeamSolution.
     private static final PrintStream regularOut = System.out;
 
-    // Messages when either main() from Official and/or MFGenerator outputted.
-    private static final String OFFICIAL_SOLUTION_OUTPUT
-            = "official solution outputted this" +
-            " (DO NOT COUNT THIS MESSAGE OUTPUT AS PART OF THE OFFICIAL): ";
-    private static final String GENERATED_SOLUTION_OUTPUT
-            = "generated solution outputted this" +
-            " (DO NOT COUNT THIS MESSAGE OUTPUT AS PART OF INPUT GENERATOR OUTPUT): ";
-
     // relative paths to test input minefields.
     private static final String TEST_INPUT_100BY100
             = ".data\\input_test100By100.txt";
@@ -47,16 +39,8 @@ class OfficialTeamSolutionTest {
     // To hold the input file
     private static String[] inputFile;
 
-    private static int ROW;
-    private static int COLUMN;
-    private static int PERCENTAGE;
-
-
     @BeforeEach
     void setUp() {
-        ROW = 1;
-        COLUMN = 1;
-        PERCENTAGE = 0;
         inputFile = new String[1];
         System.setOut(new PrintStream(outContent));
     }
