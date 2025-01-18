@@ -26,15 +26,15 @@ class OfficialTeamSolutionTest {
 
     // relative paths to test input minefields.
     private static final String TEST_INPUT_100BY100
-            = ".data\\input_test100By100.txt";
+            = ".dataMineFields\\input_test100By100.txt";
     private static final String MINESWEEPER_INPUT_TXT
-            = ".data\\minesweeper_input.txt";
+            = ".dataMineFields\\minesweeper_input.txt";
     private static final String READ_INPUT
-            = ".data\\test_read_input.txt";
+            = ".dataMineFields\\test_read_input.txt";
     private static final String SURROUNDED_BY_MINES
-            = ".data\\test_input_square_surrounded_by_mines.txt";
+            = ".dataMineFields\\test_input_square_surrounded_by_mines.txt";
     private static final String TEAM_MINESWEEPER_INPUT
-            = ".data\\team_minesweeper_input.txt";
+            = ".dataMineFields\\team_minesweeper_input.txt";
 
     // To hold the input file
     private static String[] inputFile;
