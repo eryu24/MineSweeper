@@ -1,6 +1,6 @@
 package MineFieldGenerator;
 
-// THE ONE. (maybe, but most likely).
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.InputMismatchException;

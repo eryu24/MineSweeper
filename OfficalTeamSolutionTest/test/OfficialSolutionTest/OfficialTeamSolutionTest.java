@@ -24,11 +24,6 @@ class OfficialTeamSolutionTest {
     // printing behaviors of MFGenerator and OfficialSolution.OfficialTeamSolution.
     private static final PrintStream regularOut = System.out;
 
-
-    private static int ROW;
-    private static int COLUMN;
-    private static int PERCENTAGE;
-
     // Messages when either main() from Official and/or MFGenerator outputted.
     private static final String OFFICIAL_SOLUTION_OUTPUT
             = "official solution outputted this" +
@@ -39,16 +34,22 @@ class OfficialTeamSolutionTest {
 
     // relative paths to test input minefields.
     private static final String TEST_INPUT_100BY100
-            = ".data/input_test100By100.txt";
+            = ".data\\input_test100By100.txt";
     private static final String MINESWEEPER_INPUT_TXT
-            = ".data/minesweeper_input.txt";
+            = ".data\\minesweeper_input.txt";
     private static final String READ_INPUT
-            = ".data/test_read_input.txt";
+            = ".data\\test_read_input.txt";
     private static final String SURROUNDED_BY_MINES
-            = ".data/test_input_square_surrounded_by_mines.txt";
+            = ".data\\test_input_square_surrounded_by_mines.txt";
+    private static final String TEAM_MINESWEEPER_INPUT
+            = ".data\\team_minesweeper_input.txt";
 
     // To hold the input file
     private static String[] inputFile;
+
+    private static int ROW;
+    private static int COLUMN;
+    private static int PERCENTAGE;
 
 
     @BeforeEach
@@ -69,12 +70,11 @@ class OfficialTeamSolutionTest {
     @Test
     public void test100By100AllMines() throws FileNotFoundException {
         inputFile[0] = TEST_INPUT_100BY100;
-        ROW = 100;
-        COLUMN = 100;
-        PERCENTAGE = 100;
+        MFGenerator.main(inputFile);
+        final String generatorOutput = MFGenerator.getAccumulatedMineFields();
         mainOutput();
         assertEquals(OfficialTeamSolution.outputString(),
-                MFGenerator.generateMineFieldWithArgs(ROW, COLUMN, PERCENTAGE),
+                generatorOutput,
                 "minefield should be 100 by 100 ALL MINES.");
     }
 
@@ -84,7 +84,8 @@ class OfficialTeamSolutionTest {
         mainOutput();
         MFGenerator.main(inputFile);
         assertEquals(OfficialTeamSolution.outputString(),
-                MFGenerator.getAccumulatedMineFields());
+                MFGenerator.getAccumulatedMineFields(),
+                "");
     }
 
     @Test
@@ -94,34 +95,33 @@ class OfficialTeamSolutionTest {
         final String inputToRead = MFGenerator.getAccumulatedFormattedMineFields();
         mainOutput();
         assertEquals(OfficialTeamSolution.inputString(),
-                inputToRead, "inputs did not match");
+                inputToRead, "the official solution read input incorrectly.");
     }
 
     @Test
     public void testDotSurroundedByMinesIs8() throws FileNotFoundException {
         inputFile[0] = SURROUNDED_BY_MINES;
         MFGenerator.main(inputFile);
-        final String outputWithHints = MFGenerator.getAccumulatedMineFields();
+        final String generatorOutput = MFGenerator.getAccumulatedMineFields();
         mainOutput();
-        assertEquals(OfficialTeamSolution.outputString(), outputWithHints,
-                "outputs did not match");
+        assertEquals(OfficialTeamSolution.outputString(), generatorOutput,
+                "Middle square should be 8 surrounded mines.");
+    }
+
+
+    @Test
+    public void testTeamInputFile() throws FileNotFoundException {
+        inputFile[0] = TEAM_MINESWEEPER_INPUT;
+        MFGenerator.main(inputFile);
+        final String generatorOutput = MFGenerator.getAccumulatedMineFields();
+        mainOutput();
+        assertEquals(OfficialTeamSolution.outputString(), generatorOutput,
+                "official solution outputted incorrectly based on team input file.");
     }
 
 
 
     private static void mainOutput() throws FileNotFoundException {
         OfficialTeamSolution.main(OfficialTeamSolutionTest.inputFile);
-    }
-
-    private static void printOfficialOutputMessage() {
-        System.out.println(OFFICIAL_SOLUTION_OUTPUT);
-    }
-
-    private static void printInputGeneratedMessage() {
-        System.out.println(GENERATED_SOLUTION_OUTPUT);
-    }
-
-    private static void printNewLine() {
-        System.out.println();
     }
 }
